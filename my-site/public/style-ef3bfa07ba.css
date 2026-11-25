@@ -1,0 +1,253 @@
+:root{--ink:#163a37;--coral:#ed7055;--cream:#f8f5ed;--muted:#64736c;--line:#cfd8cf;--green:#dcece2}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,sans-serif}main{max-width:1440px;margin:auto;padding:0 6%}header{height:86px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:20px}.brand{font:700 32px Georgia;text-decoration:none;color:var(--ink)}.brand span,h2 span,.intro-side span,footer strong span,.skills h3 span{color:var(--coral)}.header-label,.eyebrow,small,.detail-num,footer>span{font-size:11px;font-weight:700;letter-spacing:.17em}.header-label{color:var(--muted)}.contact{margin-left:auto;color:var(--ink);text-decoration:none;font-size:14px;font-weight:700}.contact span{color:var(--coral);margin-left:8px}.intro{display:flex;justify-content:space-between;align-items:end;padding:90px 0 82px}.eyebrow{color:#9c5846;margin:0 0 20px}.square{display:inline-block;width:8px;height:8px;background:var(--coral);margin-right:8px}h1,h2,h3{font-family:Georgia,serif;font-weight:400;letter-spacing:-.035em;margin:0}h1{font-size:clamp(48px,6.5vw,92px);line-height:1.04}h1 em{color:#49766b}.lead{font-size:18px;line-height:1.6;max-width:490px;color:#526b62;margin:28px 0 0}.intro-side{display:flex;align-items:center;gap:20px;font-size:12px;line-height:1.6;letter-spacing:.16em;font-weight:700}.asterisk{font-size:48px;color:var(--coral)}.journey{border-top:1px solid var(--ink);padding-top:36px}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:35px}.section-head h2{font-size:clamp(32px,3.4vw,48px)}.section-head>p{font-size:14px;line-height:1.5;color:var(--muted);margin:0}.world{position:relative;border:1px solid #bdcec1;background:#edf3e9;min-height:320px;overflow:hidden}.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding:38px 38px 0;position:relative;z-index:2}.timeline:before{content:'';position:absolute;top:80px;left:40px;right:40px;height:2px;background:#98b2a4}.milestone{z-index:1;display:flex;align-items:center;text-align:left;gap:14px;padding:17px;background:var(--cream);border:1px solid #b1c4b8;color:var(--ink);min-width:0;cursor:pointer;transition:transform .2s,border-color .2s,box-shadow .2s}.milestone:hover,.milestone.active{border-color:var(--coral);box-shadow:4px 4px 0 #f0c9b9;transform:translateY(-3px)}.milestone-icon{width:40px;height:40px;background:#dcece2;display:grid;place-items:center;font:bold 22px Georgia}.milestone small,.milestone strong,.milestone i{display:block}.milestone small{font-size:9px;color:#9a6858;margin-bottom:5px}.milestone strong{font:700 19px Georgia}.milestone i{font-style:normal;font-size:12px;color:var(--muted);margin-top:4px}.milestone b{margin-left:auto;color:var(--coral)}.world-label{position:absolute;left:39px;top:160px;font-size:10px;letter-spacing:.15em;color:#719387;font-weight:bold}.world-label span{color:var(--coral);font-size:18px;margin-right:6px}.person{position:absolute;width:48px;height:66px;left:18%;top:60%;z-index:3;pointer-events:none}.person svg{width:100%;height:100%;position:relative;z-index:1;image-rendering:pixelated}.person.walking svg{animation:bob .24s steps(2) infinite}.person.left svg{transform:scaleX(-1)}.shadow{position:absolute;bottom:0;left:8px;right:8px;height:5px;background:#b3c7b6;border-radius:50%}@keyframes bob{50%{translate:0 -3px}}.walk-help{position:absolute;bottom:24px;right:35px;color:#587268;font-size:12px}.keys{display:inline-block;border:1px solid #b6cabb;padding:7px;margin-right:8px;font-size:13px}.walk-help b{color:var(--coral)}.touch{display:none}.content-grid{display:grid;grid-template-columns:1.7fr 1fr;gap:18px;margin-top:18px}.detail,.skills{border:1px solid #c9d4ca;background:#fffefa;padding:30px}.detail-top{display:flex;justify-content:space-between;align-items:start}.detail-num{color:#91a298}.detail-body{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:18px}.detail h3,.skills h3{font-size:40px}.detail-role{font-weight:bold;color:#bb604c;margin:9px 0 20px;font-size:14px}.detail-body p:not(.detail-role):not(.note),.skills>p{font-size:15px;line-height:1.65;color:#5f7069;max-width:420px}.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:20px}.tags span{border:1px solid #d4ddd5;padding:7px 10px;font-size:11px;color:#597166}.note{font-size:12px;color:#87958d;margin-top:24px}.pixel-art svg{width:100%;max-width:240px;display:block;margin:auto}.spark{font-size:27px;color:var(--coral)}.skills h3{font-size:34px}.skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:18px}.skill-grid button{background:#f5f8f1;border:1px solid #dbe5dc;text-align:left;padding:13px;color:var(--ink);font-weight:700;cursor:pointer}.skill-grid button:hover,.skill-grid button.selected{border-color:var(--coral);background:#fff5ed}.skill-grid button span{display:inline-grid;place-items:center;width:32px;height:32px;margin-right:8px;color:#df714f;font-size:19px}.skills .skill-note{font-size:12px;margin:15px 0 0;color:#75857b}footer{display:flex;align-items:end;justify-content:space-between;padding:85px 0 40px;gap:20px}footer strong{font:32px Georgia}footer p{color:var(--muted);font-size:14px}footer a{color:var(--ink);font-weight:bold;font-size:14px}footer>span{color:#87958d}@media(max-width:760px){main{padding:0 5%}.intro{padding:60px 0}.intro-side{display:none}.section-head{display:block}.section-head>p{margin-top:16px}.timeline{padding:20px 16px 0;gap:8px}.timeline:before{top:61px}.milestone{padding:10px;gap:6px;display:block}.milestone-icon{width:30px;height:30px;font-size:17px;margin-bottom:8px}.milestone strong{font-size:14px}.milestone small{font-size:8px;letter-spacing:.04em}.milestone i,.milestone b{display:none}.world{min-height:370px}.world-label{top:150px;left:16px}.walk-help{left:16px;right:auto;bottom:22px;max-width:170px;line-height:1.6}.keys{display:none}.touch{display:block;position:absolute;right:16px;bottom:16px;text-align:center;z-index:4}.touch button{width:38px;height:38px;border:1px solid #aabfb1;background:#fffefa;color:var(--ink);font-size:18px;touch-action:none}.content-grid{grid-template-columns:1fr}.detail,.skills{padding:23px}.detail-body{grid-template-columns:1fr .55fr}.detail h3{font-size:34px}footer{align-items:start;flex-direction:column;padding-top:55px}.header-label{display:none}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+/* An open, winding journey with the character free to roam the document. */
+.world{background:transparent;border:0;min-height:550px;overflow:visible}.route{position:absolute;inset:25px 3% 15px;width:94%;height:calc(100% - 40px);overflow:visible}.route path{fill:none;stroke:#a6bcae;stroke-width:2;stroke-dasharray:7 9;vector-effect:non-scaling-stroke}.route-end{position:absolute;font-size:10px;font-weight:700;letter-spacing:.16em;color:#84978b}.route-end.start{left:1%;top:30%}.route-end.finish{right:0;top:50%}.timeline{display:block;padding:0;position:absolute;inset:0}.timeline:before{display:none}.milestone{position:absolute;display:flex;flex-direction:column;align-items:center;gap:12px;padding:0;background:transparent;border:0!important;box-shadow:none!important;text-align:center;transform:none!important}.milestone.mcgill{left:17%;top:48%}.milestone.ceridian{left:45%;top:4%}.milestone.veeva{left:72%;top:47%}.logo{height:75px;width:75px;display:grid;place-items:center;transition:transform .2s}.logo svg{width:62px;height:70px}.ceridian-logo{font:700 78px/1 Arial;color:#2957a1}.veeva-logo{font:700 80px/1 Arial;color:#ef8550}.milestone:hover .logo,.milestone.active .logo{transform:translateY(-6px)}.milestone.active strong:after{content:'';display:block;height:3px;background:var(--coral);margin:7px auto 0;width:35px}.milestone small{font-size:10px;letter-spacing:.13em}.milestone strong{font-size:21px}.milestone i{font-size:13px}.walk-help{position:relative;bottom:auto;right:auto;text-align:center;margin:-10px 0 42px}.person{position:absolute;left:0;top:0;z-index:20;will-change:left,top}.content-grid{border-top:1px solid var(--line);padding-top:35px;gap:55px}.detail,.skills{border:0;background:transparent;padding:0}.detail{border-right:1px solid var(--line);padding-right:40px}.skill-grid{gap:18px 25px}.skill-grid button{border:0!important;border-bottom:1px solid #d9e2d9!important;background:transparent!important;padding:12px 0;font:700 16px Georgia;display:flex;align-items:center;gap:15px}.skill-grid button img,.skill-grid button svg{width:40px;height:40px;object-fit:contain}.skill-grid button:hover,.skill-grid button.selected{color:#bd5741}.tags span{border:0;padding:0 12px 0 0;color:#74877b}.touch{position:fixed;z-index:30;right:15px;bottom:15px}.touch button{box-shadow:0 1px 5px #233e3222}
+@media(max-width:760px){.world{min-height:520px}.route{inset:10px 0;width:100%;height:500px}.route-end.start{left:0;top:22%}.route-end.finish{right:0;top:71%;font-size:9px}.milestone{width:120px}.milestone.mcgill{left:4%;top:40%}.milestone.ceridian{left:37%;top:5%}.milestone.veeva{left:66%;top:50%}.milestone strong{font-size:16px}.milestone i{display:block;font-size:11px}.milestone small{font-size:8px}.logo{width:55px;height:58px}.logo svg{width:48px;height:55px}.ceridian-logo,.veeva-logo{font-size:58px}.walk-help{position:relative;left:auto;right:auto;bottom:auto;max-width:none;margin:0 0 34px;font-size:12px}.content-grid{gap:35px}.detail{border-right:0;border-bottom:1px solid var(--line);padding:0 0 30px}.touch{display:block}.touch button{background:var(--cream)}}
+/* A wide, scrollable journey with its selected story in view. */
+.intro{padding:54px 0 50px}.section-head{margin-bottom:22px}.experience-layout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(290px,.65fr);gap:30px;align-items:start}.timeline-area{min-width:0}.timeline-heading{display:flex;justify-content:space-between;align-items:center;font-size:10px;font-weight:700;letter-spacing:.16em;color:#8b9c91;border-bottom:1px solid var(--line);padding:0 0 12px}.timeline-controls{display:flex;gap:8px}.timeline-controls button{border:1px solid #bbccc0;border-radius:50%;background:transparent;color:var(--ink);width:32px;height:32px;cursor:pointer;font-size:17px}.timeline-controls button:hover{background:#deece1}.timeline-scroll{overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;scrollbar-color:#99b7a8 transparent;scrollbar-width:thin}.world{width:1350px;height:345px;min-height:345px}.route{inset:0 2%;height:100%;width:96%}.timeline .milestone.mcgill{left:13%;top:40%}.timeline .milestone.ceridian{left:44%;top:5%}.timeline .milestone.veeva{left:74%;top:45%}.route-end.start{top:23%}.route-end.finish{top:68%}.logo.ceridian-logo{font:700 25px/1 Arial,sans-serif;letter-spacing:-.06em;color:#2459a6;width:125px}.logo.veeva-logo{width:125px}.logo.veeva-logo svg{width:125px;height:auto}.timeline-hint{margin-top:11px;font-size:10px;letter-spacing:.15em;color:#80948a;font-weight:700}.timeline-hint span{color:var(--coral);font-size:18px;margin-left:5px}.content-grid{display:contents}.detail{grid-column:2;grid-row:1;border:0;border-left:1px solid var(--line);padding:0 0 0 28px;margin-top:4px;min-width:0}.detail-body{display:block}.detail-body .pixel-art{display:none}.detail h3{font-size:35px}.detail-top .eyebrow{margin-bottom:15px}.detail-body p:not(.detail-role):not(.note){font-size:14px}.note{margin-top:18px}.skills{grid-column:1 / -1;border-top:1px solid var(--line);padding-top:25px}.skills .skill-grid{grid-template-columns:repeat(4,1fr)}.walk-help{grid-column:1;text-align:left;margin:0;font-size:12px}.touch{grid-column:1}.person{z-index:20}.journey{padding-top:24px}footer{padding-top:45px}
+@media(max-width:760px){.intro{padding:45px 0}.experience-layout{display:flex;flex-direction:column;gap:24px}.timeline-area{width:100%}.world{width:1050px;min-height:300px;height:300px}.route{height:100%;inset:0 2%;width:96%}.timeline .milestone.mcgill{left:13%;top:39%}.timeline .milestone.ceridian{left:44%;top:3%}.timeline .milestone.veeva{left:74%;top:44%}.logo.ceridian-logo,.logo.veeva-logo{width:105px}.logo.veeva-logo svg{width:105px}.ceridian-logo{font-size:22px!important}.detail{border:0;border-top:1px solid var(--line);padding:25px 0 0;margin:0;width:100%}.detail-body{display:block}.skills{width:100%}.skills .skill-grid{grid-template-columns:repeat(2,1fr)}.walk-help{margin:0}.timeline-hint{margin-top:10px}}
+
+/* Closer milestones while retaining room to scroll on smaller screens. */
+.world{width:1050px}@media(max-width:760px){.world{width:840px}}
+/* A quiet editorial route: a soft guide, an inked progress line, and small waymarks. */
+.route .route-base{stroke:#c4d4c9;stroke-width:1.5;stroke-dasharray:3 8;stroke-linecap:round}
+
+.route .route-details circle{fill:var(--cream);stroke:#78998a;stroke-width:2;vector-effect:non-scaling-stroke}.route .route-details path{fill:none;stroke:#dd9b82;stroke-width:1.5;stroke-dasharray:none;vector-effect:non-scaling-stroke}
+.milestone .logo{transition:transform .35s cubic-bezier(.2,.7,.2,1),filter .35s}.milestone:hover .logo,.milestone:focus-visible .logo{transform:translateY(-7px) rotate(-3deg);filter:drop-shadow(2px 5px 0 #e4dfcf)}.milestone.active .logo{transform:translateY(-4px)}
+.milestone:focus-visible,.timeline-controls button:focus-visible,.timeline-scroll:focus-visible{outline:2px solid #a95039;outline-offset:6px}.milestone.active strong:after{width:27px;height:2px;border-radius:2px}.timeline-controls button{transition:background .2s,opacity .2s}.timeline-controls button:disabled{opacity:.3;cursor:default}.timeline-controls button:disabled:hover{background:transparent}
+.timeline-hint{display:flex;align-items:center;gap:12px}.timeline-hint .hint-direction{font-size:16px;margin:0}.scroll-indicator{display:block;width:50px;height:2px;background:#d8e1d6;position:relative}.scroll-indicator i{display:block;position:absolute;top:0;left:calc(var(--scroll-progress,0) * 30px);height:2px;width:20px;background:#cc755d;transition:left .1s linear}
+@media(prefers-reduced-motion:reduce){.milestone .logo,.scroll-indicator i{transition:none}.milestone:hover .logo,.milestone:focus-visible .logo{transform:none}}
+/* Put the invitation and the beginning of the journey in the opening view. */
+header{height:60px}.intro{padding:30px 0 28px}.intro h1{font-size:clamp(42px,4.2vw,64px)}.lead{margin-top:14px;font-size:16px;line-height:1.45}.explore-link{display:inline-block;color:var(--ink);font-size:14px;font-weight:700;text-decoration:none;border-bottom:1px solid var(--coral);padding-bottom:7px}.explore-link span{color:#a5422e;margin-left:8px}.journey{padding-top:20px}.section-head{margin-bottom:12px}.section-head h2{font-size:clamp(30px,3vw,42px)}.section-head .eyebrow{margin-bottom:10px}.timeline-area{position:relative}.world{height:300px;min-height:300px}.timeline-heading,.timeline-hint,.detail-num,.skills .skill-note{color:#526b60}.stop-index{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:10px 0 12px}.stop-index button{background:transparent;border:0;border-bottom:2px solid transparent;padding:5px 8px;color:#526b60;font:700 13px Arial,sans-serif;cursor:pointer}.stop-index button[aria-pressed="true"]{color:#953e2c;border-bottom-color:#c95d46}.stop-index button:focus-visible,#walk-focus:focus-visible{outline:2px solid #a95039;outline-offset:3px}.walk-help{margin:0;text-align:left;color:#526b60}.walk-help button{border:0;background:transparent;padding:2px 0;color:#8e3e2d;text-decoration:underline;text-underline-offset:3px;cursor:pointer;font:700 12px Arial,sans-serif}.touch{position:absolute;right:4px;bottom:4px}.person{pointer-events:none}
+@media(max-width:760px){header{height:54px}.intro{padding:25px 0 24px}.intro h1{font-size:clamp(38px,10vw,48px);line-height:1.04}.lead{margin-top:11px;font-size:15px}.journey{padding-top:16px}.section-head>p{margin-top:7px;font-size:13px}.section-head h2{font-size:29px}.section-head .eyebrow{margin-bottom:8px}.timeline-heading{padding-bottom:6px}.world{height:245px;min-height:245px}.route{height:100%}.timeline-hint{margin-top:4px}.stop-index{margin:4px 0 6px;gap:3px}.stop-index button{padding:5px}.walk-help{max-width:160px;min-height:70px;font-size:12px}.touch{bottom:0;right:0}.touch button{width:34px;height:34px}.experience-layout{gap:16px}.detail{padding-top:18px}}
+.walk-help strong{color:#8e3e2d;font-weight:700}
+/* Larger touch targets sit in the document flow so they cannot cover text. */
+@media(max-width:760px){
+ .walk-help{max-width:none;min-height:0;margin:10px 0 8px}
+ .touch{position:relative;right:auto;bottom:auto;display:flex;flex-direction:column;align-items:center;width:max-content;margin:4px 0 8px auto;gap:4px}
+ .touch>div{display:flex;gap:4px}
+ .touch button{width:48px;height:48px;min-width:48px;min-height:48px;font-size:22px;line-height:1;touch-action:none}
+ .stop-index button{min-height:44px;padding:8px 10px}
+ .timeline-controls button{width:44px;height:44px}
+}
+/* Leave space at both sides of a phone-width rail for the sprite to exit. */
+@media(max-width:760px){.timeline-scroll{width:calc(100% - 64px);margin-inline:32px}}
+/* Mid-size windows keep the selected story beside the scrollable timeline. */
+@media (min-width:640px) and (max-width:900px){
+ .experience-layout{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(220px,1fr);gap:18px;align-items:start}
+ .timeline-area{width:auto;min-width:0}
+ .detail{grid-column:2;grid-row:1;border:0;border-left:1px solid var(--line);padding:0 0 0 16px;margin:0;width:auto}
+ .detail h3{font-size:clamp(25px,3.5vw,33px)}
+ .detail-role{margin:7px 0 12px}.detail-body p:not(.detail-role):not(.note){line-height:1.45}
+ .timeline-scroll{width:100%;margin-inline:0}
+ .world{height:clamp(225px,44svh,285px);min-height:0}
+ .skills{grid-column:1 / -1}.skills .skill-grid{grid-template-columns:repeat(4,1fr)}
+}
+#journey-title{scroll-margin-top:12px}
+@media (min-width:640px) and (max-width:900px){
+ .intro-side{display:flex}.milestone{gap:8px}.milestone .logo{height:55px}.milestone strong{font-size:17px}.milestone i{font-size:11px}
+}
+@media (min-width:640px) and (max-width:900px){.mcgill-logo svg{height:52px}}
+/* On compact screens, visiting a milestone is the navigation. */
+.mobile-hint{display:none}
+@media(max-width:760px){
+ .timeline-controls,.touch,.hint-direction,.walk-help,.desktop-hint{display:none}
+ .mobile-hint{display:inline}
+ .timeline-heading{min-height:27px}
+}
+/* The wordmark supplies the visible company name; retain the text for assistive technology. */
+.milestone.ceridian strong,.milestone.veeva strong{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.milestone.ceridian.active .logo,.milestone.veeva.active .logo{position:relative}
+.milestone.ceridian.active .logo::after,.milestone.veeva.active .logo::after{content:'';position:absolute;bottom:-2px;left:50%;transform:translateX(-50%);width:27px;height:2px;border-radius:2px;background:var(--coral)}
+/* Pair the shield with its name as one branded milestone mark. */
+.logo.mcgill-logo{display:flex;flex-direction:column;justify-content:center;gap:2px;height:95px;width:100px}
+.mcgill-logo svg{height:65px;width:auto;flex:none}.mcgill-wordmark{font:700 19px/1 Georgia,serif;color:#ad2c28;letter-spacing:-.035em}
+.milestone.mcgill strong{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.milestone.mcgill.active .logo{position:relative}.milestone.mcgill.active .logo::after{content:'';position:absolute;bottom:-5px;left:50%;transform:translateX(-50%);width:27px;height:2px;border-radius:2px;background:var(--coral)}
+@media(max-width:900px){.logo.mcgill-logo{height:73px}.mcgill-logo svg{height:50px}.mcgill-wordmark{font-size:16px}}
+/* A lightweight skill branch attached to the selected chapter. */
+.role-skills{margin:19px 0 0;border-top:1px solid #d6dfd6;padding-top:12px}
+.role-skills summary{cursor:pointer;list-style:none;font-size:13px;font-weight:700;color:#315a4e;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.role-skills summary::-webkit-details-marker{display:none}.role-skills summary::after{content:'+';font-size:19px;font-weight:400;color:#a94c38}.role-skills[open] summary::after{content:'−'}
+.role-skills summary:focus-visible{outline:2px solid #a95039;outline-offset:4px}
+.role-skills-branch{display:flex;flex-wrap:wrap;gap:8px;margin:13px 0 0;padding:2px 0 0 14px;border-left:1px solid #a7bcae}
+.role-skills-branch span{font-size:12px;color:#506c5c;padding:5px 8px;background:#edf4eb;border-radius:2px}
+.detail-body .role-skills p{font-size:11px;line-height:1.4;color:#65796d;margin:8px 0 0}
+/* Four milestones, with the latest experience added to the same winding route. */
+.world{width:1350px}.timeline .milestone.mcgill{left:8%;top:39%}.timeline .milestone.ceridian{left:30%;top:4%}.timeline .milestone.veeva{left:53%;top:44%}.timeline .milestone.helix{left:77%;top:6%}
+.logo.helix-logo{width:120px;font:700 37px/1 Arial,sans-serif;letter-spacing:-.06em;color:#166b6e}
+.milestone.helix strong{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.milestone.helix.active .logo{position:relative}.milestone.helix.active .logo::after{content:'';position:absolute;bottom:-2px;left:50%;transform:translateX(-50%);width:27px;height:2px;background:var(--coral)}
+
+.detail-dates{font-size:12px!important;color:#536b60!important;font-weight:700}.role-history{padding:0;margin:14px 0 0;display:block;list-style:none}.role-history li{border-top:1px solid #d6dfd6;padding:10px 0;color:var(--ink);font-size:13px;line-height:1.4}.role-history li strong,.role-history li span{display:block}.role-history li span{font-size:11px;color:#526b60;margin-top:3px}.role-history li p{font-size:13px!important;margin:5px 0!important;line-height:1.45!important}
+@media(max-width:760px){.world{width:1080px}.timeline .milestone.mcgill{left:8%;top:39%}.timeline .milestone.ceridian{left:30%;top:3%}.timeline .milestone.veeva{left:53%;top:44%}.timeline .milestone.helix{left:77%;top:3%}.logo.helix-logo{width:105px;font-size:30px}}
+.toolkit-more{font-size:13px!important;line-height:1.7!important;color:#526b60!important;margin-top:14px}
+/* Education and internship overlap in time; both retain their own stop. */
+.world{width:1620px}.timeline .milestone.mcgill{left:5%;top:39%}.timeline .milestone.amadeus{left:23%;top:4%}.timeline .milestone.ceridian{left:41%;top:40%}.timeline .milestone.veeva{left:60%;top:4%}.timeline .milestone.helix{left:79%;top:39%}
+.logo.amadeus-logo{width:125px;font:700 20px/1 Arial,sans-serif;letter-spacing:-.04em;color:#253d7d}.milestone.amadeus strong{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.milestone.amadeus.active .logo{position:relative}.milestone.amadeus.active .logo::after{content:'';position:absolute;bottom:-2px;left:50%;transform:translateX(-50%);width:27px;height:2px;background:var(--coral)}
+
+@media(max-width:760px){.world{width:1350px}.timeline .milestone.mcgill{left:5%;top:39%}.timeline .milestone.amadeus{left:23%;top:3%}.timeline .milestone.ceridian{left:41%;top:39%}.timeline .milestone.veeva{left:60%;top:3%}.timeline .milestone.helix{left:79%;top:39%}.logo.amadeus-logo{width:105px;font-size:17px}}
+
+/* Bring neighbouring milestones closer while keeping each label readable. */
+.world{width:1400px}@media(max-width:760px){.world{width:1180px}}
+/* The company stays one stop; its roles form an accessible secondary path. */
+.logo.helix-logo img{display:block;width:125px;max-width:100%;height:auto}
+.role-timeline[hidden]{display:none}.role-timeline{margin:14px 0 18px;padding:0 0 0 16px;border-left:2px solid #d4a08b}
+.role-timeline h3{font:700 15px/1.3 Arial,sans-serif;letter-spacing:0}.role-timeline>p{color:#536b60;font-size:12px;margin:3px 0 10px}.role-track{display:flex;overflow-x:auto;gap:8px;padding:3px 2px 8px;scrollbar-color:#a8bcae transparent;scrollbar-width:thin}.role-track button{position:relative;flex:0 0 155px;text-align:left;background:transparent;border:0;border-top:2px solid #c7d6ca;padding:10px 4px 7px;color:var(--ink);cursor:pointer}.role-track button:before{content:'';position:absolute;top:-6px;left:4px;background:#fbf8f0;border:2px solid #82a08f;width:6px;height:6px;border-radius:50%}.role-track button[aria-pressed=true]{border-top-color:#cf6c50}.role-track button[aria-pressed=true]:before{background:#cf6c50;border-color:#cf6c50}.role-track button:focus-visible{outline:2px solid #a95039;outline-offset:2px}.role-track button span,.role-track button strong{display:block}.role-track button span{font-size:10px;color:#526b60;line-height:1.3}.role-track button strong{font:700 12px/1.35 Arial,sans-serif;margin-top:5px}
+@media(max-width:760px){.role-track button{flex-basis:150px;min-height:60px}.logo.helix-logo img{width:105px}}
+/* Helix role changes continue the actual career path, oldest to newest. */
+.world{width:2200px}
+.timeline .milestone.mcgill{left:3%;top:39%}.timeline .milestone.amadeus{left:14%;top:4%}.timeline .milestone.ceridian{left:25%;top:39%}.timeline .milestone.veeva{left:36%;top:4%}.timeline .milestone.helix{left:47%;top:4%}
+.role-track{position:absolute;inset:0;display:block;overflow:visible;padding:0;pointer-events:none}
+.role-track button{position:absolute;top:45%;width:165px;min-height:0;transform:translateX(-50%);border:0;padding:15px 7px 4px;text-align:center;pointer-events:auto}
+.role-track button[data-role="3"]{left:59%}.role-track button[data-role="2"]{left:69%}.role-track button[data-role="1"]{left:79%}.role-track button[data-role="0"]{left:89%}
+.role-track button:before{top:-5px;left:calc(50% - 6px);width:8px;height:8px;background:#f8f5ed;border:2px solid #678e7d}.role-track button[aria-pressed=true]:before{background:#cf6c50;border-color:#cf6c50;box-shadow:0 0 0 3px #f8f5ed,0 0 0 4px #cf6c50}.role-track button strong{font-size:12px}.role-track button span{font-size:11px}.role-track button:focus-visible{outline:2px solid #a95039;outline-offset:2px}
+@media(max-width:760px){.world{width:2000px}.timeline .milestone.mcgill{left:3%;top:39%}.timeline .milestone.amadeus{left:14%;top:4%}.timeline .milestone.ceridian{left:25%;top:39%}.timeline .milestone.veeva{left:36%;top:4%}.timeline .milestone.helix{left:47%;top:4%}.role-track button{width:150px;min-height:0;top:45%;padding:13px 6px 4px}}
+
+/* Helix is a chapter label; its actual milestones are the four roles. */
+.helix-chapter{position:absolute;left:47%;top:4%;display:flex;flex-direction:column;align-items:center;gap:3px;width:125px;pointer-events:none}
+.helix-chapter img{display:block;width:125px;height:auto}.helix-chapter span{font:700 10px/1.3 Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#536b60}
+.role-track button[data-role="3"]{top:64.5833%}.role-track button[data-role="2"]{top:58.3333%}.role-track button[data-role="1"]{top:52.0833%}.role-track button[data-role="0"]{top:45.8333%}
+.role-track button{min-height:44px}.role-track button strong{font-size:13px}.role-track button[aria-pressed=true] strong{color:#9d4936}
+@media(max-width:760px){.helix-chapter{width:105px}.helix-chapter img{width:105px}.role-track button{min-height:44px}}
+
+/* Keep the opening caption clear of the sprite and clarify the path. */
+.route-end.start{top:80px;color:#526b60}
+.route .route-base{
+  stroke:#8fa89a;
+  stroke-width:1.5;
+  stroke-dasharray:3 6;
+  vector-effect:non-scaling-stroke;
+}
+.route .route-progress{
+  stroke:#bd543b;
+  stroke-width:2.5;
+  stroke-dasharray:none;
+  stroke-linecap:round;
+  vector-effect:non-scaling-stroke;
+}
+.timeline-scroll{scrollbar-color:#839e90 transparent}
+.detail-position{display:grid;justify-items:end;gap:3px;white-space:nowrap}
+.detail-role-position{font:700 12px/1.35 Arial,sans-serif;color:#953e2c}
+.hero-terminal{display:none}
+
+@media(min-width:960px){
+  .intro{position:relative}
+  .hero-terminal{
+    display:block;
+    position:absolute;
+    top:48px;
+    right:clamp(175px,22vw,315px);
+    width:100px;
+    height:76px;
+    pointer-events:none;
+  }
+}
+
+@media(max-width:760px){
+  .person{width:41px;height:56px}
+  .route-end.start{top:68px;font-size:12px;letter-spacing:.04em}
+  .route-end.finish,.timeline-heading,.helix-chapter span{
+    font-size:12px;
+    letter-spacing:.04em;
+  }
+  .milestone{width:150px;margin-left:-15px;gap:8px}
+  .milestone small{font-size:12px;line-height:1.25;letter-spacing:.035em;white-space:nowrap}
+  .milestone i,.role-track button span{font-size:12px}
+  .timeline-hint{gap:8px}
+  .timeline-hint .hint-label,.timeline-hint .mobile-hint{
+    margin-left:0;
+    color:#8e3e2d;
+    font:700 13px/1.35 Arial,sans-serif;
+    letter-spacing:0;
+  }
+  .scroll-indicator{flex-shrink:0}
+}
+
+@media(max-width:639px){
+  header{height:50px}
+  .intro{padding:17px 0 18px}
+  .intro .eyebrow{margin-bottom:12px}
+  .intro h1{font-size:clamp(31px,9.8vw,44px)}
+  .journey{padding-top:12px}
+  .section-head{margin-bottom:8px}
+  .section-head h2{font-size:clamp(24px,7.4vw,29px)}
+  .section-head>p{display:none}
+  .section-head .eyebrow{margin-bottom:6px}
+  .world{height:222px;min-height:222px}
+  .stop-index{
+    display:grid;
+    grid-template-columns:repeat(5,minmax(0,1fr));
+    margin:4px 0 0;
+  }
+  .stop-index button{padding-inline:2px;font-size:clamp(11px,3.3vw,13px)}
+  .experience-layout{gap:12px}
+  .detail{padding-top:15px}
+}
+/* Field Guide: logo-first tools, readable text for practices without a brand. */
+.field-guide{grid-column:1/-1;border-top:1px solid var(--line);padding-top:30px}
+.field-guide h3{font-size:clamp(36px,4vw,50px)}.field-guide .field-intro{max-width:640px;margin:10px 0 0;font-size:15px;color:#536b60}
+.field-guide .skill-note{min-height:1.5em;font-size:13px!important;font-weight:700;color:#814432!important;margin:12px 0 18px}
+.field-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid #b5c7b9}
+.field-group{padding:24px 24px 26px 0;border-bottom:1px solid #cbd8cb;min-width:0}
+.field-group:nth-child(even){padding-left:28px;border-left:1px solid #cbd8cb}
+.field-group h4{font:400 24px/1.2 Georgia,serif;letter-spacing:-.025em;margin:0 0 16px;color:var(--ink)}
+.field-items{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.skill-logo-button{position:relative;display:grid;place-items:center;width:52px;height:52px;border:1px solid #d0dfd2;background:#f6f9f2;border-radius:4px;cursor:pointer;padding:9px}
+.skill-logo-button .skill-logo{width:32px;height:32px;object-fit:contain;display:block}
+.skill-logo-button:hover,.skill-logo-button.selected{border-color:#b35d43;background:#fff5ed}.skill-logo-button:focus-visible{outline:2px solid #a95039;outline-offset:3px}
+.skill-logo-name{pointer-events:none;position:absolute;z-index:4;left:50%;bottom:calc(100% + 5px);transform:translateX(-50%);padding:4px 7px;background:#173a32;color:#fffefa;border-radius:3px;white-space:nowrap;font:12px/1.2 Arial,sans-serif;visibility:hidden;opacity:0}
+.skill-logo-button:hover .skill-logo-name,.skill-logo-button:focus-visible .skill-logo-name{visibility:visible;opacity:1}
+.skill-concept{display:inline-flex;align-items:center;min-height:44px;padding:5px 10px;color:#365b4d;font-size:13px;line-height:1.3;border-bottom:1px solid #b7cbbc}
+/* Company labels sit above their SVG waypoints with space for the role and date. */
+.timeline .milestone {
+  top: auto;
+  bottom: calc(100% - var(--waypoint-y) + var(--waypoint-gap, 18px));
+  left: var(--waypoint-x);
+  width: 184px;
+  margin-left: -92px;
+  gap: 6px;
+}
+.timeline .milestone.mcgill { --waypoint-x: 5.648%; --waypoint-y: 72.9167%; left: var(--waypoint-x); top: auto; }
+.timeline .milestone.amadeus { --waypoint-x: 16.688%; --waypoint-y: 39.5833%; left: var(--waypoint-x); top: auto; }
+.timeline .milestone.ceridian { --waypoint-x: 27.728%; --waypoint-y: 72.9167%; --waypoint-gap: 27px; left: var(--waypoint-x); top: auto; }
+.timeline .milestone.veeva { --waypoint-x: 38.672%; --waypoint-y: 39.5833%; left: var(--waypoint-x); top: auto; }
+.timeline .milestone::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 4px);
+  width: 1px;
+  height: calc(var(--waypoint-gap, 18px) - 10px);
+  background: #8fa89a;
+  pointer-events: none;
+}
+.timeline .milestone .logo { height: 34px; }
+.timeline .milestone .mcgill-logo { flex-direction: row; gap: 4px; width: auto; }
+.timeline .milestone .mcgill-logo svg { height: 30px; width: auto; }
+.timeline .milestone .mcgill-wordmark { font-size: 17px; }
+.timeline .milestone .veeva-logo svg { width: 108px; }
+.milestone-copy { display: grid; justify-items: center; gap: 2px; }
+.milestone-copy i { margin: 0; color: var(--ink); font-size: 13px; line-height: 1.25; }
+.milestone-date { color: #526b60; font-size: 12px; line-height: 1.25; font-variant-numeric: tabular-nums; }
+/* The chapter mark belongs to the low point of the Helix valley (SVG 510, 360). */
+.helix-chapter {
+  left: 50.96%;
+  top: auto;
+  bottom: calc(25% + 17px);
+  transform: translateX(-50%);
+}
+.helix-chapter span { white-space: nowrap; }
+
+@media (max-width:760px) {
+  .timeline .milestone { width: 164px; margin-left: -82px; gap: 4px; }
+  .timeline .milestone .logo { height: 28px; }
+  .timeline .milestone .mcgill-logo svg { height: 26px; }
+  .milestone-copy i { font-size: 12px; }
+  .role-track button[data-role="3"] :is(span, strong) { width: fit-content; margin-inline: auto; }
+}
+@media (max-width:375px) {
+  /* Keep the first waypoint on the curve and within reach of the valley label. */
+  .role-track button[data-role="3"] { left: 56.5%; top: 66.4558%; }
+}
+@media(max-width:760px){.field-grid{grid-template-columns:1fr}.field-group,.field-group:nth-child(even){border-left:0;padding:20px 0}.field-group h4{font-size:21px}.field-items{gap:9px}.skill-logo-button{width:48px;height:48px;padding:8px}}
+/* Touch visitors can identify the selected logo without leaving its position. */
+.skill-logo-button.selected .skill-logo-name{visibility:visible;opacity:1}

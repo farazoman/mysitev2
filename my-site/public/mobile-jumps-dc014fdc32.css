@@ -1,0 +1,43 @@
+.mobile-jumps,
+.mobile-jump-back {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .mobile-jumps {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin: 12px 0 0;
+  }
+
+  .mobile-jumps a,
+  .mobile-jump-back {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 8px 12px;
+    border: 1px solid #a8bbae;
+    border-radius: 4px;
+    background: var(--green);
+    color: var(--ink);
+    font: 700 14px/1.3 Arial, sans-serif;
+    text-decoration: none;
+  }
+
+  .field-guide a.mobile-jump-back {
+    margin: 14px 0 0;
+  }
+
+  .mobile-jumps a:focus-visible,
+  .mobile-jump-back:focus-visible {
+    outline: 2px solid #a95039;
+    outline-offset: 3px;
+  }
+
+  #journey-title,
+  #field-title {
+    scroll-margin-top: 16px;
+  }
+}
