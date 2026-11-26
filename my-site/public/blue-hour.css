@@ -1,0 +1,62 @@
+/* Blue Hour: cool neutral surfaces, blue-green route, and a warm progress accent.
+   The employer wordmarks retain their original brand colors. */
+:root {
+  --ink: #203449;
+  --coral: #aa482f;
+  --cream: #edf3f2;
+  --muted: #3c6d79;
+  --line: #a7b8ba;
+  --green: #d9e7e6;
+}
+
+body { background: var(--cream); color: var(--ink); }
+.eyebrow, .detail-role, .detail-role-position,
+.timeline-hint .hint-label, .timeline-hint .mobile-hint,
+.field-guide .skill-note, .walk-help button, .walk-help strong {
+  color: #aa482f !important;
+}
+.lead, .walk-help, .timeline-heading, .timeline-hint, .detail-num,
+.role-history li span, .role-timeline > p, .helix-chapter span,
+.timeline .milestone-date, .route-end, .route-end.start,
+.field-guide .field-intro, .detail-body p:not(.detail-role):not(.note),
+.skills > p, .tags span, .note, .toolkit-more, footer > span {
+  color: #3c6d79;
+}
+.detail-dates, .toolkit-more { color: #3c6d79 !important; }
+.route .route-base, .timeline .milestone::after { stroke: #3c6d79; }
+.timeline .milestone::after { background: #3c6d79; }
+.route .route-progress { stroke: #aa482f; }
+.route .route-details circle { stroke: #3c6d79; }
+.route .route-details path { stroke: #aa482f; }
+.timeline-scroll, .role-track { scrollbar-color: #3c6d79 transparent; }
+.timeline-controls button, .touch button, .mobile-jumps a, .mobile-jump-back {
+  border-color: #3c6d79;
+  color: var(--ink);
+}
+.timeline-controls button:hover, .touch button, .mobile-jumps a, .mobile-jump-back {
+  background: #d9e7e6;
+}
+.timeline-controls button:disabled:hover { background: transparent; }
+.mobile-jumps a:focus-visible, .mobile-jump-back:focus-visible,
+.timeline-controls button:focus-visible { outline: 2px solid #aa482f; outline-offset: 3px; }
+.scroll-indicator { background: #a7b8ba; }
+.scroll-indicator i { background: #aa482f; }
+.stop-index button { color: #3c6d79; }
+.stop-index button[aria-pressed="true"] { color: #aa482f; border-bottom-color: #aa482f; }
+.role-skills summary { color: #203449; }
+.role-skills summary::after { color: #aa482f; }
+.role-skills-branch span { color: #203449; background: #d9e7e6; }
+.detail-body .role-skills p, .role-track button span { color: #3c6d79; }
+.role-track button:before { background: #edf3f2; border-color: #3c6d79; }
+.role-track button[aria-pressed=true] { border-top-color: #aa482f; }
+.role-track button[aria-pressed=true]:before {
+  background: #aa482f;
+  border-color: #aa482f;
+  box-shadow: 0 0 0 3px #edf3f2, 0 0 0 4px #aa482f;
+}
+.role-track button[aria-pressed=true] strong { color: #aa482f; }
+.skill-logo-button { background: #e4eeed; border-color: #a7b8ba; }
+.skill-logo-button:hover, .skill-logo-button.selected { border-color: #aa482f; background: #e5eeee; }
+.skill-logo-name { background: #14283b; color: #e9f2f3; }
+.skill-concept { color: #203449; }
+.shadow { background: #a7b8ba; }

@@ -17,7 +17,7 @@ function syncPathToSprite(){
  const fraction=Math.max(0,Math.min(1,(spriteX-left)/width));
  progressWindow.setAttribute('width',String(fraction*routeSvg.viewBox.baseVal.width));
 }
-function clamp(){pos.x=Math.max(0,Math.min(document.documentElement.clientWidth-person.offsetWidth,pos.x));pos.y=Math.max(0,Math.min(document.documentElement.scrollHeight-person.offsetHeight,pos.y));person.style.left=pos.x+'px';person.style.top=pos.y+'px'}
+function clamp(){pos.x=Math.max(0,Math.min(document.documentElement.clientWidth-person.offsetWidth,pos.x));pos.y=Math.max(0,Math.min(document.documentElement.scrollHeight-person.offsetHeight,pos.y));const left=pos.x+'px',top=pos.y+'px';if(person.style.left!==left)person.style.left=left;if(person.style.top!==top)person.style.top=top}
 function select(id){selected=id;world.dataset.selected=id;const d=data[id];buttons.forEach(b=>{b.classList.toggle('active',b.dataset.id===id);b.setAttribute('aria-pressed',String(b.dataset.id===id))});document.querySelectorAll('[data-stop]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.stop===id)));document.querySelector('#detail-title').textContent=d.title;document.querySelector('#detail-role').textContent=d.role;document.querySelector('#detail-copy').textContent=d.copy;document.querySelector('#detail-num').textContent=String(Object.keys(data).indexOf(id)+1).padStart(2,'0')+' / '+String(Object.keys(data).length).padStart(2,'0');document.querySelector('#tags').replaceChildren(...d.tags.map(t=>{const s=document.createElement('span');s.textContent=t;return s}));document.querySelector('#detail-dates').textContent=d.dates;document.querySelector('.role-skills-branch').replaceChildren(...d.skills.map(t=>{const s=document.createElement('span');s.textContent=t;return s}));document.querySelector('#role-history').replaceChildren(...d.history.map(([role,dates,description])=>{const item=document.createElement('li'),title=document.createElement('strong'),when=document.createElement('span'),body=document.createElement('p');title.textContent=role;when.textContent=dates;body.textContent=description;item.append(title,when,body);return item}));if(id!=='helix')roleTrack.querySelectorAll('button').forEach(button=>button.setAttribute('aria-pressed','false'));document.querySelector('.role-skills summary').textContent=id==='helix'?'Skills across Helix':'Skills for this chapter';rolePosition.hidden=id!=='helix';if(id==='helix')showHelixRole(helixRoleIndex)}
 const roleTrack=document.querySelector('#helix-role-track');
 const rolePosition=document.querySelector('#detail-role-position');
@@ -150,11 +150,16 @@ document.querySelectorAll('[data-stop]').forEach(button=>button.addEventListener
  }
  cancelJourney();
  keys.clear();
+ helixRoleIndex=Number(firstRole.dataset.role);
+ select('helix');
  startHelixLeg(firstRole,helixRunSpeed);
 }));
 // Explicit input takes precedence over the walkthrough, including during role pauses.
 window.addEventListener('pointerdown',cancelHelixTour,{passive:true});
-window.addEventListener('wheel',cancelHelixTour,{passive:true});
+// A deliberate page or touch scroll takes precedence over click-to-walk, too;
+// otherwise the sprite's follow logic pulls the visitor back to the timeline.
+window.addEventListener('wheel',cancelJourney,{passive:true});
+window.addEventListener('touchmove',cancelJourney,{passive:true});
 window.addEventListener('keydown',cancelHelixTour);
 window.addEventListener('blur',cancelHelixTour);
 window.addEventListener('resize',cancelHelixTour);
@@ -202,6 +207,33 @@ function keepSpriteInView(){
  if(top<70)window.scrollBy(0,top-70);
  else if(top>innerHeight-110)window.scrollBy(0,top-(innerHeight-110));
 }
+// Keep a snapshot in document coordinates so ordinary page scrolling does not
+// count as movement of the timeline. Capture it each frame before a resize can
+// change the layout; only a sprite already inside the rail follows its movement.
+function railGeometry(){
+ const rect=rail.getBoundingClientRect();
+ return {left:rect.left+scrollX,right:rect.right+scrollX,
+  top:rect.top+scrollY,bottom:rect.bottom+scrollY,scrollLeft:rail.scrollLeft};
+}
+let previousRailGeometry=null;
+function rememberRailGeometry(){previousRailGeometry=railGeometry()}
+function reconcileResize(){
+ const previous=previousRailGeometry,current=railGeometry();
+ if(previous){
+  const centerX=pos.x+person.offsetWidth/2,centerY=pos.y+person.offsetHeight/2;
+  const wasInside=centerX>=previous.left&&centerX<=previous.right&&
+   centerY>=previous.top&&centerY<=previous.bottom;
+  if(wasInside){
+   // Preserve the point in the scrollable timeline if a new viewport size
+   // changes the rail's position or clamps its horizontal scroll offset.
+   pos.x+=current.left-previous.left+previous.scrollLeft-current.scrollLeft;
+   pos.y+=current.top-previous.top;
+  }
+ }
+ clamp();
+ syncPathToSprite();
+ previousRailGeometry=current;
+}
 function tick(time){
  const dt=Math.min((time-last)/1000||0,.04);
  last=time;
@@ -213,11 +245,12 @@ function tick(time){
    syncPathToSprite();
    keepSpriteInView();
   }
+  rememberRailGeometry();
   requestAnimationFrame(tick);
   return;
  }
- let remaining=Infinity;let dx=(keys.has('right')?1:0)-(keys.has('left')?1:0),dy=(keys.has('down')?1:0)-(keys.has('up')?1:0);if(target){if(target.scrollStart===null)target.scrollStart=time;const progress=target.scrollDuration?Math.min(1,(time-target.scrollStart)/target.scrollDuration):1;const eased=progress<.5?4*progress*progress*progress:1-Math.pow(-2*progress+2,3)/2;rail.scrollLeft=target.scrollFrom+(target.scrollTo-target.scrollFrom)*eased;const r=target.element.getBoundingClientRect(),tx=r.left+scrollX+r.width/2-person.offsetWidth/2,ty=destinationTop(target.element,r);let x=tx-pos.x,y=ty-pos.y,dist=Math.hypot(x,y);remaining=dist;if(dist<5){pos.x=tx;pos.y=ty;if(progress===1){select(target.id);target=null}}else{dx=x/dist;dy=y/dist}}let moving=!!(dx||dy);if(moving){let n=Math.hypot(dx,dy);const step=Math.min(300*dt,remaining),stepX=dx/n*step,stepY=dy/n*step;move(stepX,stepY,!target);if(dx<0)person.classList.add('left');else if(dx>0)person.classList.remove('left')}person.classList.toggle('walking',moving);clamp();if(moving)syncPathToSprite();if(moving)keepSpriteInView();if(!target&&moving){const p=person.getBoundingClientRect();let onRole=false;for(const b of roleTrack.querySelectorAll('button')){const r=b.getBoundingClientRect();if(p.right>r.left&&p.left<r.right&&p.top<r.bottom+15&&p.bottom>r.top){onRole=true;const index=Number(b.dataset.role);if(selected!=='helix'||helixRoleIndex!==index){helixRoleIndex=index;select('helix')}break}}if(!onRole)for(const b of buttons){const r=b.getBoundingClientRect();if(p.right>r.left&&p.left<r.right&&p.top<r.bottom+15&&p.bottom>r.top&&selected!==b.dataset.id){select(b.dataset.id);break}}}requestAnimationFrame(tick)}
-function init(){const r=buttons[0].getBoundingClientRect(),track=rail.getBoundingClientRect();pos.x=Math.max(track.left+12,r.left+r.width/2-90)+scrollX-person.offsetWidth/2;pos.y=track.top+scrollY+6;clamp()}window.addEventListener('resize',clamp);document.querySelectorAll('[data-skill]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-skill]').forEach(x=>{x.classList.toggle('selected',x===b);x.setAttribute('aria-pressed',String(x===b))});const name=b.dataset.skill;document.querySelector('#skill-note').textContent=notes[name]?name+' — '+notes[name]:name}));select('mcgill');init();syncPathToSprite();requestAnimationFrame(tick);
+ let remaining=Infinity;let dx=(keys.has('right')?1:0)-(keys.has('left')?1:0),dy=(keys.has('down')?1:0)-(keys.has('up')?1:0);if(target){if(target.scrollStart===null)target.scrollStart=time;const progress=target.scrollDuration?Math.min(1,(time-target.scrollStart)/target.scrollDuration):1;const eased=progress<.5?4*progress*progress*progress:1-Math.pow(-2*progress+2,3)/2;rail.scrollLeft=target.scrollFrom+(target.scrollTo-target.scrollFrom)*eased;const r=target.element.getBoundingClientRect(),tx=r.left+scrollX+r.width/2-person.offsetWidth/2,ty=destinationTop(target.element,r);let x=tx-pos.x,y=ty-pos.y,dist=Math.hypot(x,y);remaining=dist;if(dist<5){pos.x=tx;pos.y=ty;if(progress===1){select(target.id);target=null}}else{dx=x/dist;dy=y/dist}}let moving=!!(dx||dy);if(moving){let n=Math.hypot(dx,dy);const step=Math.min(300*dt,remaining),stepX=dx/n*step,stepY=dy/n*step;move(stepX,stepY,!target);if(dx<0)person.classList.add('left');else if(dx>0)person.classList.remove('left')}person.classList.toggle('walking',moving);clamp();if(moving)syncPathToSprite();if(moving)keepSpriteInView();if(!target&&moving){const p=person.getBoundingClientRect();let onRole=false;for(const b of roleTrack.querySelectorAll('button')){const r=b.getBoundingClientRect();if(p.right>r.left&&p.left<r.right&&p.top<r.bottom+15&&p.bottom>r.top){onRole=true;const index=Number(b.dataset.role);if(selected!=='helix'||helixRoleIndex!==index){helixRoleIndex=index;select('helix')}break}}if(!onRole)for(const b of buttons){const r=b.getBoundingClientRect();if(p.right>r.left&&p.left<r.right&&p.top<r.bottom+15&&p.bottom>r.top&&selected!==b.dataset.id){select(b.dataset.id);break}}}rememberRailGeometry();requestAnimationFrame(tick)}
+function init(){const r=buttons[0].getBoundingClientRect(),track=rail.getBoundingClientRect();pos.x=Math.max(track.left+12,r.left+r.width/2-90)+scrollX-person.offsetWidth/2;pos.y=track.top+scrollY+6;clamp()}window.addEventListener('resize',reconcileResize);document.querySelectorAll('[data-skill]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-skill]').forEach(x=>{x.classList.toggle('selected',x===b);x.setAttribute('aria-pressed',String(x===b))});const name=b.dataset.skill;document.querySelector('#skill-note').textContent=notes[name]?name+' — '+notes[name]:name}));select('mcgill');init();syncPathToSprite();rememberRailGeometry();requestAnimationFrame(tick);
 document.querySelector('#scroll-left').addEventListener('click',()=>rail.scrollBy({left:-rail.clientWidth*.7,behavior:'smooth'}));document.querySelector('#scroll-right').addEventListener('click',()=>rail.scrollBy({left:rail.clientWidth*.7,behavior:'smooth'}));
 
 // Keep the scroll affordances in sync with touch, trackpads, and sprite movement.

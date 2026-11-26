@@ -1,6 +1,8 @@
 # Faraz Oman — interactive résumé
 
-A personal career timeline with a walking pixel-art character, role milestones, and a skills field guide. The site is a static HTML, CSS, and JavaScript application housed in the existing Create React App project.
+A personal career timeline with an interactive terminal introduction, a walking pixel-art character, role milestones, and a skills field guide. The site is a static HTML, CSS, and JavaScript application housed in the existing Create React App project.
+
+Use the terminal's command buttons or type `help`, `aboutme`, `resume`, `skills`, `contact`, `linkedin`, or `clear`. The terminal runs entirely in the browser; it is not a system shell.
 
 ## Run locally
 
@@ -31,9 +33,12 @@ The project uses Create React App 4 and an older dependency lockfile. On newer N
 ## Project layout
 
 - `my-site/public/index.html` — page structure and timeline markup.
+- `my-site/public/terminal-hero.js` and `terminal-hero.css` — terminal commands and presentation.
+- `my-site/public/blue-hour.css` — site-wide color palette.
 - `my-site/public/app-*.js` — timeline data and interactions.
 - `my-site/public/style-*.css` and `mobile-jumps-*.css` — responsive styling.
 - `my-site/public/assets/skills/` — local skill icons and their license.
+- `my-site/public/vendor/` — locally served jQuery and jQuery Terminal assets and their licenses; the terminal does not depend on a third-party CDN.
 - `my-site/src/index.js` — intentionally minimal entry point for Create React App.
 
 The first Amadeus internship year is marked approximate pending confirmation. Career details and skills should be reviewed before sharing publicly.
