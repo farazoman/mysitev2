@@ -21,7 +21,14 @@
       '2025–2026  Helix — Tech Lead & Senior Software Engineer II',
       '2026–now   Helix — Software Engineering Manager'
     ].join('\n'),
-    skills: 'Engineering leadership · Platform engineering · AWS · Observability · Agentic AI · LLM evaluation\n\nGo · TypeScript · Java · Python · Airflow · React · Bash\nExplore the field guide below.',
+    skills: [
+      'Engineering leadership · Technical architecture · Mentoring',
+      'AWS · AWS CDK · Terraform',
+      'Observability · Datadog · Incident management',
+      'Agentic development · LLM evaluation · AI code review',
+      'Go · TypeScript · Java',
+      'C# · Selenium · SpecFlow'
+    ].join('\n'),
     contact: 'Email: farazoman@gmail.com',
     linkedin: 'LinkedIn: https://www.linkedin.com/in/farazoman'
   };
