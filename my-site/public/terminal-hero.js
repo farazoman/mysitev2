@@ -28,7 +28,7 @@
       'Agentic development · LLM evaluation · AI code review',
       'Go · TypeScript · Java',
       'C# · Selenium · SpecFlow'
-    ].join('\n'),
+    ].join(' · '),
     contact: 'Email: farazoman@gmail.com',
     linkedin: 'LinkedIn: https://www.linkedin.com/in/farazoman'
   };
